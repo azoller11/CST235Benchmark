@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+
+<h:head>
+<h1>Welcome to Bible search!</h1>
+</h:head>
+<body>
+	<div align="center">
+		<h:form>
+				Book Name:<h:inputText value="#{search.name}" align="center" />
+			<br></br>  
+				Chapter #:<h:inputText value="#{search.chapter}" align="center" />
+			<br></br>
+				Verse #:<h:inputText value="#{search.verse}" align="center" />
+			<br></br>
+			<h:commandButton action="#{searchController.findVerse(search)}"
+				value="Submit" align="center" />
+		</h:form>
+		<h:form>
+			Search Word: <h:inputText value="#{search.name}" align="center" />
+			<h:commandButton action="#{searchController.findWord(search)}"
+				value="Submit Word" align="center" />
+		</h:form>
+		<h:form>
+			Search first 20 occurances of: <h:inputText value="#{search.name}" align="center" />
+			<h:commandButton action="#{searchController.findManyWords(search)}"
+				value="Submit Word" align="center" />
+		</h:form>
+	</div>
+	<h:form align="right">
+		<h2>
+			<p>Search: #{search.name} #{search.chapter} : #{search.verse}</p>
+		</h2>
+	</h:form>
+	<h:form align="center">
+		<p>#{scripture.scripture}</p>
+	</h:form>
+
+
+
+
+</body>
+</html>
